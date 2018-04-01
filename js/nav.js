@@ -1,4 +1,17 @@
 $(function(){
+    //设置点击所有元素用户提示框都会隐藏
+    $(document).click(function(){
+         $("#my_ul").hide();
+     });
+    //阻止冒泡事件，即document的事件对用户提示框无效
+    $("#my_a,#my_ul").click(function(event){
+        event.stopPropagation();
+    });
+    //用户提示框切换
+    $('#my_a').click(function(){
+        $('#my_ul').toggle(200);
+    });
+   
     // nav收缩展开
     $('.nav-item>a').on('click',function(){
         if (!$('.nav').hasClass('nav-mini')) {

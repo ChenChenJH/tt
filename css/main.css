@@ -1,0 +1,48 @@
+.my_message{
+	width:70px;
+	height:45px;
+	background: #3CB371;
+	position:absolute;
+	right:142px;
+	top:30px;
+	line-height:50px;
+	padding-left: 10px;
+}
+
+.user_div{
+	width:130px;
+	height:45px;
+	position:absolute;
+	right:10px;
+	top:30px;
+	background: #80aaff;
+	padding-top:5px;
+}
+#my_a{
+	text-decoration:none;
+	margin-left:5px;
+}
+.user_ul{
+	width:130px;
+	margin-top:8px;
+	background:rgba(255,255,255,1);
+	position: relative;/*要用定位下面的z-index才有效果*/
+	z-index:2;/*设置为2，避免被下面的当前位置显示的背景颜色挡住*/
+	padding:0px;
+	display: none;/*加载页面时隐藏，点击才显示*/
+}
+.user_ul li{
+	/*border-top:1px solid #80aaff;*/
+	height:30px;
+	padding:0px;
+	line-height: 30px;
+}
+.user_ul li a{
+	padding-left: 10px;
+	display:block;/*使用a标签填满整个li*/
+	text-decoration: none;
+	color:black;
+}
+.user_ul li a:hover{
+	background: #FFDEAD;
+}

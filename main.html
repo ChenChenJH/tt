@@ -13,15 +13,14 @@
     <link rel="stylesheet" type="text/css" href="css/nav.css">
     <!--左侧导航栏的箭头的css-->
     <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+    <!--此页面的css-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <!--awesome图标-->
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
-    <!-- <link href="css/bootstrap-grid.css" rel="stylesheet" /> -->
-    <!-- <link href="css/bootstrap-reboot.css" rel="stylesheet" /> -->
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <!--左侧导航栏的js-->
     <script type="text/javascript" src="js/nav.js"></script>
-
 	<!--下雪js-->
     <script src="js/jquery.snow.js"></script>
   </head>
@@ -30,18 +29,34 @@
 	<div style="width:100%;height:90%;" >
 	    <!--头部-->
 	    <div style="width:100%;">
-	       <div  style="height:130px;overflow:hidden;">
-	          <!-- <h1>业务监督管理系统</h1> -->
-	          <img src="images/banner-img.jpg" style="position: relative;left:-250px;"/>
-	          <img src="images/logo.png" style="position: absolute;top:20px;left:10px;"/>
-	      </div>
+			<div  style="height:130px;overflow:hidden;">
+			  <!-- <h1>业务监督管理系统</h1> -->
+			  <img src="images/banner-img.jpg" style="position: relative;left:-270px;"/>
+			  <img src="images/logo.png" style="position:absolute;top:20px;left:10px;"/>
+			</div>
+			<!--信息数量-->
+			<div class="my_message">
+				<a href="javascript:;">
+					<i class="fa fa-envelope-o" style="font-size:28px;color:white;"></i>
+					<img src="images/num10.png" width="22px"height="22px"/>
+				</a>
+			</div>
+			<!--用户信息栏-->
+			<div class="user_div">
+				<a id="my_a" href="javascript:;">
+					<img src="images/user.jpg" alt="photo" style="border-radius:50%;" />
+					<span style="color:#FFF;margin-left:5px;font-size:16px;">管理员</span>
+					<i class="fa fa-caret-down" style="margin-left:5px;color:white;font-size:18px;"></i>
+				</a>
+				<!--用户提示框-->
+				<ul id="my_ul" class="user_ul">
+					<li><a href="javascript:;"><i class="fa fa-key"></i>修改密码</a></li>
+					<li><a href="javascript:;"><i class="fa fa-user"></i>个人信息</a></li>
+					<li><a href="index.html" onclick="return confirm('确认要退出吗？')"><i class="fa fa-sign-out"></i>退出</a></li>
+				</ul>
+			</div>
 	    </div>
 		
-		<!--当前位置-->
-	    <!-- <div style="height:40px;border:1px solid;clear:both;">
-	    	
-	    </div> -->
-
 	    <!--左侧导航栏-->
 	    <div  class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="position:relative;left:-10px;float:left;height:100%;">
 	       <div class="nav">
@@ -133,7 +148,7 @@
 		            <td>note</td>
 		            <td> 
 		              <button type="button" class="btn btn-outline-primary">详情</button>
-		              <button type="button" class="btn btn-outline-primary">删除</button>
+		              <button type="button" class="btn btn-outline-primary" onclick="confirm('确认要删除吗？')">删除</button>
 		            </td>
 		          </tr>
 
@@ -316,8 +331,8 @@
 	    </div>
 
 	    <!--尾部-->
-	    <div style="height:40px;border:1px solid;clear:both;">
-	    	
+	    <div style="height:10%;border-top:1px solid;clear:both;color:#1E90FF;font-size:18px;text-align:center;padding-top:5px;font-weight:bold;">
+	    	<span>珠海市档案局业务监督指导系统</span>
 	    </div>
     </div>
     	<!--下雪-->
