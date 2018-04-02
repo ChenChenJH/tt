@@ -37,4 +37,13 @@ $(function(){
             $('.nav').removeClass('nav-mini');
         }
     });
+
+    //全选全不选
+    $('#checks').change(function(){
+        if(this.checked){
+            $('.form-check-input').prop('checked',true);
+        }else{
+            $('.form-check-input').prop('checked',false);
+        }
+    });
 });

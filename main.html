@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <!--左侧导航栏的js-->
-    <script type="text/javascript" src="js/nav.js"></script>
+    <!--左侧导航栏的js及该页面手写的js-->
+    <script type="text/javascript" src="js/main.js"></script>
 	<!--下雪js-->
     <script src="js/jquery.snow.js"></script>
   </head>
@@ -111,10 +111,17 @@
 	    <!--右侧-->
 	    <div class="col-xs-9  col-lg-9 col-md-9 col-sm9" style="float:right;height:100%; position:relative;left:-20px;overflow:auto;">
 
-	    	<!--当前位置-->
+	    	
 	    	<div style="vertical-align:middle;background:#FFF0F5;line-height:30px;padding-left:10px;">
+	    		<!--当前位置-->
 	    		<span>
 	    			<a href="javascript:;"><i class="fa fa-home" style="font-size:18px"></i>首页</a>
+	    		</span>
+	    		<!--搜索框-->
+	    		<span style="float:right;margin-right:100px;">
+	    			<i class="fa fa-search"></i>
+	    			<input type="text" placeholder="请输入关键字" style="width:100px;height:25px;"/>
+	    			<button class="btn btn-primary btn-sm" style="height:25px;line-height:10px;">搜索</button>
 	    		</span>
 	    	</div>
 
@@ -124,7 +131,7 @@
 		          <tr>
 		            <td>
 		              <div class="form-check">
-		                  <input type="checkbox" class="form-check-input" >
+		                  <input id="checks" type="checkbox" class="form-check-input" >
 		              </div>
 		            </td>
 		            <td>序号</td>
@@ -158,7 +165,7 @@
 		                  <input type="checkbox" class="form-check-input" >
 		              </div>
 		            </td>
-		            <td>1</td>
+		            <td>2</td>
 		            <td>chen</td>
 		            <td>13420156346</td>
 		            <td>john@example.com</td>
@@ -175,7 +182,7 @@
 		                  <input type="checkbox" class="form-check-input" >
 		              </div>
 		            </td>
-		            <td>1</td>
+		            <td>3</td>
 		            <td>chen</td>
 		            <td>13420156346</td>
 		            <td>john@example.com</td>
@@ -192,7 +199,7 @@
 		                  <input type="checkbox" class="form-check-input" >
 		              </div>
 		            </td>
-		            <td>1</td>
+		            <td>4</td>
 		            <td>chen</td>
 		            <td>13420156346</td>
 		            <td>john@example.com</td>
@@ -209,7 +216,7 @@
 		                  <input type="checkbox" class="form-check-input" >
 		              </div>
 		            </td>
-		            <td>1</td>
+		            <td>5</td>
 		            <td>chen</td>
 		            <td>13420156346</td>
 		            <td>john@example.com</td>
@@ -226,7 +233,7 @@
 		                  <input type="checkbox" class="form-check-input" >
 		              </div>
 		            </td>
-		            <td>1</td>
+		            <td>6</td>
 		            <td>chen</td>
 		            <td>13420156346</td>
 		            <td>john@example.com</td>
@@ -243,7 +250,7 @@
 		                  <input type="checkbox" class="form-check-input" >
 		              </div>
 		            </td>
-		            <td>1</td>
+		            <td>7</td>
 		            <td>chen</td>
 		            <td>13420156346</td>
 		            <td>john@example.com</td>
@@ -260,7 +267,7 @@
 		                  <input type="checkbox" class="form-check-input" >
 		              </div>
 		            </td>
-		            <td>1</td>
+		            <td>8</td>
 		            <td>chen</td>
 		            <td>13420156346</td>
 		            <td>john@example.com</td>
@@ -276,7 +283,23 @@
 		                  <input type="checkbox" class="form-check-input" >
 		              </div>
 		            </td>
-		            <td>1</td>
+		            <td>9</td>
+		            <td>chen</td>
+		            <td>13420156346</td>
+		            <td>john@example.com</td>
+		            <td>note</td>
+		            <td> 
+		              <button type="button" class="btn btn-outline-primary">详情</button>
+		              <button type="button" class="btn btn-outline-primary">删除</button>
+		            </td>
+		          </tr>
+		          <tr>
+		            <td>
+		              <div class="form-check">
+		                  <input type="checkbox" class="form-check-input" >
+		              </div>
+		            </td>
+		            <td>10</td>
 		            <td>chen</td>
 		            <td>13420156346</td>
 		            <td>john@example.com</td>
@@ -294,7 +317,7 @@
 				<table >
 		          <tr>
 		            <td colspan="3">
-		               <button type="button" class="btn btn-secondary btn-sm">
+		               <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#myModal">
 		                  <i class="fa fa-user-plus"></i>增加
 		                </button>
 		                <button type="button" class="btn btn-info btn-sm">
@@ -334,6 +357,32 @@
 	    <div style="height:10%;border-top:1px solid;clear:both;color:#1E90FF;font-size:18px;text-align:center;padding-top:5px;font-weight:bold;">
 	    	<span>珠海市档案局业务监督指导系统</span>
 	    </div>
+
+	    <!--增加模态框-->
+		<div class="modal fade" id="myModal">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		   
+		        <!-- 模态框头部 -->
+		        <div class="modal-header">
+		          <h5 class="modal-title">增加新用户</h5>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		   
+		        <!-- 模态框主体 -->
+		        <div class="modal-body">
+		          未完待续..
+		        </div>
+		   
+		        <!-- 模态框底部 -->
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+		        </div>
+		   
+		      </div>
+		    </div>
+		</div>
+
     </div>
     	<!--下雪-->
    <script>
