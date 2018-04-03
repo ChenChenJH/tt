@@ -46,4 +46,20 @@ $(function(){
             $('.form-check-input').prop('checked',false);
         }
     });
+
+    //鼠标移到表格行改变背景颜色
+    $('.tr_hover').mouseover(function(){
+          $(this).addClass('tr_hover_color');
+      }).mouseout(function(){
+          $(this).removeClass('tr_hover_color');
+    });
+
+    //表格单行点击选中复选框
+    $('.tr_hover').click(function(){
+        if($(this).find('.form-check-input').is(':checked')){
+            $(this).find('.form-check-input').prop('checked',false);
+        }else{
+            $(this).find('.form-check-input').prop('checked',true);
+        }
+    });
 });

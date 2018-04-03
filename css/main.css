@@ -46,3 +46,10 @@
 .user_ul li a:hover{
 	background: #FFDEAD;
 }
+.first_tr{
+	background: #87CEEB;
+}
+
+.tr_hover_color{
+	background:#E1FFFF;
+}
