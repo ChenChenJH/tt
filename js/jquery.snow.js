@@ -1,13 +1,5 @@
 /**
- * jquery.snow - jQuery Snow Effect Plugin
- *
- * Available under MIT licence
- *
- * @version 1 (21. Jan 2012)
- * @author Ivan Lazarevic
- * @requires jQuery
- * @see http://workshop.rs
- *
+下雪的js
  * @params minSize - min size of snowflake, 10 by default
  * @params maxSize - max size of snowflake, 20 by default
  * @params newOn - frequency in ms of appearing of new snowflake, 500 by default

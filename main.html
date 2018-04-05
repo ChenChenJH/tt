@@ -15,14 +15,13 @@
     <link rel="stylesheet" type="text/css" href="font/iconfont.css">
     <!--此页面的css-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
+     <!--打赏功能的css-->
+    <link rel="stylesheet" type="text/css" href="css/reward.css">
     <!--awesome图标-->
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <!--左侧导航栏的js及该页面手写的js-->
-    <script type="text/javascript" src="js/main.js"></script>
-	<!--下雪js-->
-    <script src="js/jquery.snow.js"></script>
+  
   </head>
   <body>
   
@@ -50,15 +49,16 @@
 				</a>
 				<!--用户提示框-->
 				<ul id="my_ul" class="user_ul">
-					<li><a href="javascript:;"><i class="fa fa-key"></i>修改密码</a></li>
-					<li><a href="javascript:;"><i class="fa fa-user"></i>个人信息</a></li>
+					<li><a href="javascript:confirm('该功能未开放!');"><i class="fa fa-key"></i>修改密码</a></li>
+					<li><a href="javascript:confirm('该功能未开放!');"><i class="fa fa-user"></i>个人信息</a></li>
 					<li><a href="index.html" onclick="return confirm('确认要退出吗？')"><i class="fa fa-sign-out"></i>退出</a></li>
 				</ul>
 			</div>
 	    </div>
 		
-	    <!--左侧导航栏-->
+	    <!--左侧-->
 	    <div  class="col-xs-3 col-lg-3 col-md-3 col-sm-3" style="position:relative;left:-10px;float:left;height:100%;">
+	    	<!--左侧导航栏-->
 	       <div class="nav">
 	        <!--   <div class="nav-top">
 	              <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)"><img src="images/mini.png" ></div>
@@ -106,6 +106,50 @@
 	              </li>
 	          </ul>
 	      </div>
+			<!--左侧联系栏-->
+	      <div id="service" style="position:absolute;bottom:0px;">
+                <ul>
+                    <li >
+                        <a href="javascript:;" class="weixin_area">
+                            <img src="images/l02.png" width="47" height="49" class="wx_shows" />
+                            <img src="images/wechat.jpg" width="145" class="weixin" style="margin:-100px 57px 0 0;border:5px solid 	#FFA500;border-radius:10px;display:none;" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=164979511" target="class">
+                           <div class="qq_hides" style="width:161px;display:none;" id="qq">
+                                <div >
+                                    <img src="images/ll04.png">
+                                </div>
+                                <div><span style="color:#FFF;font-size:13px">164979511</span></div>
+                            </div>
+                            <img src="images/l04.png" width="47" height="49" class="qq_shows" />
+
+                        </a>
+                    </li>
+                    <li >
+                        <a href="javascript:;">
+                            <div class="tel_hides" style="width:161px;display:none;" id="tels">
+                                <div >
+                                    <img src="images/ll05.png">
+                                </div>
+                                <div ><span style="color:#FFF;font-size:12px">120130119110</span>
+                                </div>
+                            </div>
+                            <img src="images/l05.png" width="47" height="49" class="tel_shows" />
+                        </a>
+                    </li>
+                    <li id="btn">
+                        <a href="javascript:;" id="top_btn">
+                            <div class="top_hides" style="width:161px;display:none">
+                                <img src="images/ll06.png" width="161" height="49" />
+                            </div>
+                            <img src="images/l06.png" width="47" height="49" class="top_shows" />
+                        </a>
+                    </li>
+                </ul>
+          </div>
+
 	    </div>
 
 	    <!--右侧-->
@@ -352,7 +396,38 @@
 	    <!--尾部-->
 	    <div style="height:10%;border-top:1px solid;clear:both;color:#1E90FF;font-size:18px;text-align:center;padding-top:5px;font-weight:bold;">
 	    	<span>珠海市档案局业务监督指导系统</span>
-	    </div>
+
+			<!--打赏-->
+			 <div class="content">
+			    <p><a href="javascript:;" onclick="dashangToggle()" class="btn btn-danger" title="打赏，支持一下">打赏一下</a></p>
+			    <div class="hide_box"></div>
+			    <div class="shang_box">
+			    	<a class="shang_close" href="javascript:;" onclick="dashangToggle()" title="关闭"><img src="https://static.runoob.com/images/dashang/close.jpg" alt="取消" /></a>
+			       
+			    	<div class="shang_tit">
+			    		<p>感谢您的支持，我会继续努力的!</p>
+			    	</div>
+			    	<div class="shang_payimg">
+			    		<img src="images/zhifubao.jpg" alt="扫码支持" title="扫一扫" />
+			    	</div>
+			    		<div class="pay_explain">扫码打赏，你说多少就多少</div>
+			    	<div class="shang_payselect">
+			    		<div class="pay_item checked" data-id="zhifubao">
+				    		<span class="radiobox"></span>
+				    		<span class="pay_logo"><img src="https://static.runoob.com/images/dashang/alipay.jpg" alt="支付宝" /></span>
+			    		</div>
+			    		<div class="pay_item" data-id="wechat">
+				    		<span class="radiobox"></span>
+				    		<span class="pay_logo"><img src="https://static.runoob.com/images/dashang/wechat.jpg" alt="微信" /></span>
+			    		</div>
+			    	</div>
+			    	<div class="shang_info">
+			    		<p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+			    	</div>
+			    </div>
+		  </div>
+
+		</div>
 
 	    <!--增加模态框-->
 		<div class="modal fade" id="myModal">
@@ -379,11 +454,20 @@
 		    </div>
 		</div>
 
+
     </div>
-    	<!--下雪-->
-   <script>
+      <!--左侧导航栏的js及该页面手写的js-->
+    <script type="text/javascript" src="js/main.js"></script>
+	<!--下雪js-->
+    <script src="js/jquery.snow.js"></script>
+    <!--打赏js-->
+    <script src="js/price.js"></script>
+    <!--左侧联系栏js-->
+    <script src="js/service.js"></script>
+    <!--下雪-->
+   	<script>
       $(document).ready( function(){
-       $.fn.snow( { minSize: 5, maxSize: 50, newOn: 300, flakeColor: '#DDA0DD' } );
+       	$.fn.snow( { minSize: 5, maxSize: 50, newOn: 300, flakeColor: '#DDA0DD' } );
       });
     </script>  
   </body>

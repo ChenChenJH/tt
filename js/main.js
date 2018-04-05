@@ -1,3 +1,6 @@
+/**
+main.html用到的js
+*/
 $(function(){
     //设置点击所有元素用户提示框都会隐藏
     $(document).click(function(){
