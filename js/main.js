@@ -58,11 +58,21 @@ $(function(){
     });
 
     //表格单行点击选中复选框
-    $('.tr_hover').click(function(){
+    $('.tr_hover ').click(function(){
         if($(this).find('.form-check-input').is(':checked')){
             $(this).find('.form-check-input').prop('checked',false);
         }else{
             $(this).find('.form-check-input').prop('checked',true);
         }
+    });
+
+     //阻止冒泡事件，表格单行点击选中复选框事件无效
+    $(".tr_hover button,:checkbox").click(function(event){
+        event.stopPropagation();
+    });
+
+    //给所有的表格里面的按钮分页按钮绑定click事件
+    $('.tr_hover button,.pagination a').click(function(){
+        confirm('该功能未开放!');
     });
 });
