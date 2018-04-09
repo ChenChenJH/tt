@@ -9,6 +9,8 @@
     <title>首页-泰坦数字档案室</title>
     <!--bookstrap4-->
     <link href="css/bootstrap.css" rel="stylesheet" />
+    <!--bootstrap文件上传插件css-->
+    <link href="css/fileinput.min.css" rel="stylesheet" />
     <!--左侧导航栏css-->
     <link rel="stylesheet" type="text/css" href="css/nav.css">
     <!--左侧导航栏的箭头的css-->
@@ -21,6 +23,8 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <!--bootstrap文件上传插件js-->
+    <script src="js/fileinput.min.js"></script>
   
   </head>
   <body>
@@ -432,7 +436,7 @@
 	    <!--增加模态框-->
 		<div class="modal fade" id="myModal">
 		    <div class="modal-dialog">
-		      <div class="modal-content">
+		      <div class="modal-content" style="width:600px;">
 		   
 		        <!-- 模态框头部 -->
 		        <div class="modal-header">
@@ -441,8 +445,32 @@
 		        </div>
 		   
 		        <!-- 模态框主体 -->
-		        <div class="modal-body">
-		          未完待续..
+		        <div class="modal-body modal-body_div">
+		        	<form id="myform" method="post" action="javascript:;">
+		        		<div>
+		        			用户名：<input type="text" name="username"/>
+		        		</div>
+		        		<div>
+		        			密码：<input type="text" name="password"/>
+		        		</div>
+		        		<div>
+		        			确认密码：<input type="text" name="password"/>
+		        		</div>
+		        		<div>
+		        			手机号码：<input type="text" name="tel"/>
+		        		</div>
+		        		<div>
+		        			邮箱: <input type="text" name="email"/>
+		        		</div>
+		        		<div style="max-width:500px;">
+		        			照片: <input id="f_upload" type="file"/>
+		        			<button  class="btn btn-primary btn-sm">预览</button>
+		        		</div>
+		        		<div style="text-align:center;margin-top:50px;">
+		        			<button type="submit"  class="btn btn-primary">确认</button>
+		        			<button type="reset" class="btn btn-default">重置</button>
+		        		</div>
+		        	</form>
 		        </div>
 		   
 		        <!-- 模态框底部 -->
