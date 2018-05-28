@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>pdf查看</title>
+ <script src="js/jquery-1.10.2.min.js"></script>
+ <!--显示pdf文件-->
+ <script type="text/javascript" src="js/jquery.media.js"></script>  
+ 
+  <style type="text/css">
+      .main_div{
+        margin:0 auto;
+       
+      }
+  </style>
+  <script type="text/javascript">  
+    $(function() {  
+        $('a.media').media({width:800, height:600});  
+    });  
+</script>  
+</head>
+<body> 
+  <div style="width:800px;height:650px;" class="main_div" id="my_div">
+  <a class="media" href="pdf/陈金华-java开发工程师.pdf" id="readpdf"></a>
+</div>
+</body>
+</html>        
+        
